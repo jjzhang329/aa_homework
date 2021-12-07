@@ -1,3 +1,4 @@
+require 'bcrypt'
 class User < ApplicationRecord
     attr_reader :password
     validates :username, presence:true 
@@ -32,7 +33,7 @@ class User < ApplicationRecord
 
     def password=(password)
         @password = password
-        assword_digest = BCrypt::Password.create(password)
+        password_digest = BCrypt::Password.create(password)
         
     end
 end
