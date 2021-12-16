@@ -42,14 +42,15 @@ let micah = new Elephant("Micah", 143, ["trotting", "playing tic tac toe", "doin
 
 let herd = [ellie, charlie, kate, micah];
 
-Elephant.prototype.paradeHelper = function(elephant) {
+Elephant.paradeHelper = function(elephant) {
     console.log(`${elephant.name} is trotting by!`)
-}
 
-console.log(Elephant.prototype.paradeHelper((elephant) => {herd.forEach(elephant => console.log(elephant))}))
+}
+herd.forEach(elephant => Elephant.paradeHelper(elephant))
+
 
 //closure
-
+/*
 function dinerBreakfast() {
     let order = "I'd like cheesy scrambled eggs please.";
     console.log(order);
@@ -61,4 +62,4 @@ function dinerBreakfast() {
 };
 let bfastOrder = dinerBreakfast();
 bfastOrder("chocolate chip pancakes")
-bfastOrder("grits")
+bfastOrder("grits")*/
